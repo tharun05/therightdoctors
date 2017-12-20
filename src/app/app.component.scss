@@ -1,0 +1,41 @@
+mat-sidenav {
+    // width: 58px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #2A3F54;
+    
+}
+
+.header {
+    height: 58px !important;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+ .mat-drawer-container {
+    background-color: #f2f2f2;
+    color: rgba(0, 0, 0, .87);
+    
+}
+
+.mat-toolbar {
+    color: white;
+}
+
+.sidenav-fab-container .mat-sidenav-content,
+.sidenav-fab-container md-sidenav {
+    display: flex !important;
+    overflow: hidden;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none !important;
+}
+.my-link {
+    cursor: pointer;
+    color: white;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-weight: bold;
+}

@@ -1,0 +1,88 @@
+<aside>
+
+  <article>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <h5>Form Validation</h5>
+    </div>
+  </article>
+
+  <main>
+    <div class="card">
+      <form [formGroup]="myForm" novalidate autocomplete='off' class="form">
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="User Name or Email " required [formControl]="myForm.controls.user_name" [(ngModel)]="personalDetails.name">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_name "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Email " required [formControl]="myForm.controls.user_email" [(ngModel)]="personalDetails.email">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_email "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Confirm Email" required [formControl]="myForm.controls.user_confirmEmail" [(ngModel)]="personalDetails.confirmEmail">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_confirmEmail "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Number " required [formControl]="myForm.controls.user_number" [(ngModel)]="personalDetails.number">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_number "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Website Url " required [formControl]="myForm.controls.user_url" [(ngModel)]="personalDetails.websiteUrl">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_url "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Occupation" required [formControl]="myForm.controls.user_occupation" [(ngModel)]="personalDetails.occupation">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_occupation "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput [formControl]="myForm.controls.user_password" [(ngModel)]="personalDetails.password" ngControl="password"
+              name="password" placeholder="Password" [type]="hide ? 'text' : 'password'" type="password">
+            <!-- <mat-icon style="color:black" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_password"> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput [formControl]="myForm.controls.user_repeatPassword" [(ngModel)]="personalDetails.repeatPassword" ngControl="password"
+              name="password" placeholder="Re-Enter password" [type]="hide ? 'text' : 'password'" type="password">
+            <!-- <mat-icon style="color:black" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_repeatPassword"> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput placeholder="Telephone" required [formControl]="myForm.controls.user_telephone" [(ngModel)]="personalDetails.telephone">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_telephone "> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field fxFlex="100" style="width:100%">
+            <input matInput [formControl]="myForm.controls.user_textarea" [(ngModel)]="personalDetails.textarea" ngControl="textarea"
+              name="textarea" placeholder="Text Area">
+            <mat-hint>
+              <form-messages [control]="myForm.controls.user_textarea"> </form-messages>
+            </mat-hint>
+          </mat-form-field>
+        </div>
+        <div style="position:absolute;top:4px;right:20px;z-index:99">
+          <span>
+            <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="signInEmail()">Submit</button>
+            <button mat-raised-button class="button-container" (click)="forgotPassword()">Cancel</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </main>
+</aside>

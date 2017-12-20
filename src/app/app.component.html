@@ -1,0 +1,31 @@
+<main>
+    <article>
+    <mat-toolbar color="primary" class="header" style="background-color:#343957;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="start start">
+            <span>
+            <button mat-icon-button (click)="sidenav.toggle()" style="width:60px;height:60px;margin-left:-16px;border-bottom:1px solid #c6d0da;border-radius:0%">
+            <mat-icon class="md-24" style="color:white">menu</mat-icon>
+            </button>
+            <!-- <img src="../assets/images/APNATANKER.png" alt="logo-brand" sty> -->
+        </span>
+        </div>
+        <!-- <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                <button mat-menu-item (click)=myProfile()>My Profile</button>
+                <button mat-menu-item (click)="logout()">Log Out</button>
+            </mat-menu>
+        </div> -->
+    </mat-toolbar>
+</article>
+
+</main>
+
+<mat-sidenav-container style="height:100vh">
+    <mat-sidenav #sidenav [mode]="navMode" opened="true" style="border-right: 1px solid #c6d0da;height: 100vh;width: 220px;">
+        <app-menu></app-menu>
+        
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
